@@ -1,6 +1,0 @@
-DELETE  http://localhost:5000/
-Content-Type: application/json
-
-{
-    "serial":"MTL01"
-}
