@@ -15,7 +15,7 @@ app.use(express.urlencoded({ limit: "1mb", extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://mtl.netlify.app/"],
     credentials: true,
   })
 );
