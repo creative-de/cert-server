@@ -19,7 +19,7 @@ app.use(
     credentials: true,
   })
 );
-
+const PORT = process.env.PORT || 5000;
 mongoose.connect(
   process.env.CONNECTION_URL,
   {
@@ -36,6 +36,6 @@ app.use("/auth", userRouter);
 app.use("/query", queryRouter);
 app.use("/admin", adminRouter);
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log(`server is running on port ${5000}`);
 });
