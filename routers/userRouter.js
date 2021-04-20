@@ -133,14 +133,14 @@ router.get("/logout", (req, res) => {
 
 //check if am I logged in, since cookies are sent through httponly, so in order to check the token
 // we must send an http request to check if there is a valid token
-router.get("/loggedin", (req, res) => {
+router.get("/loggedin", async (req, res) => {
   try {
     const token = req.cookies.token;
     if (!token) {
       return res.json(false);
     }
 
-    jwt.verify(token, process.env.JWT_KEY);
+    await jwt.verify(token, process.env.JWT_KEY);
     res.send(true);
   } catch (error) {
     console.error(error);
