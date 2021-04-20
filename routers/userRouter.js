@@ -109,8 +109,7 @@ router.post("/login", async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
-        sameSite: "none",
-        secure: true,
+        sameSite: "lax",
       })
       .json(userExist)
       .send();

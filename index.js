@@ -12,13 +12,13 @@ const app = express();
 
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ limit: "1mb", extended: true }));
-app.use(cookieParser());
 app.use(
   cors({
     origin: "https://mtl.netlify.app",
     credentials: true,
   })
 );
+app.use(cookieParser());
 const PORT = process.env.PORT || 5000;
 mongoose.connect(
   process.env.CONNECTION_URL,
